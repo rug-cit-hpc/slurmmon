@@ -46,7 +46,7 @@ This subpackage is the slurmmon web frontend.
 %package python
 Summary: slurmmon python library
 Group: System Environment/Base
-Prefix: /usr/lib/python2.6/site-packages
+Prefix: /usr/lib/python2.7/site-packages
 %description python
 Slurmmon is a system for gaining insight into Slurm and the jobs it runs.
 It's meant for cluster administrators looking to raise cluster utilization and measure the effects of configuration changes.
@@ -68,8 +68,8 @@ mkdir -p %{buildroot}/
 for d in etc usr var; do
 	rsync -av --exclude .gitignore "$d"/ %{buildroot}/"$d"/
 done
-mkdir -p %{buildroot}/usr/lib/python2.6/site-packages/
-rsync -av lib/python/site-packages/ %{buildroot}/usr/lib/python2.6/site-packages/
+mkdir -p %{buildroot}/usr/lib/python2.7/site-packages/
+rsync -av lib/python/site-packages/ %{buildroot}/usr/lib/python2.7/site-packages/
 
 
 %files daemon
@@ -94,4 +94,4 @@ rsync -av lib/python/site-packages/ %{buildroot}/usr/lib/python2.6/site-packages
 
 %files python
 %defattr(-,root,root,-)
-/usr/lib/python2.6/site-packages/*
+/usr/lib/python2.7/site-packages/*
