@@ -96,6 +96,12 @@ if form.get('cluster', None)=='dev':
 <table>
 	<tr>
 		<td>
+			<strong>host</strong>:
+			<select name="h" onchange="document.forms[0].submit();">
+			<%= buildoptions('h') %>
+			</select>
+		</td>
+		<td>
 			<strong>range</strong>:
 			<select name="r" onchange="document.forms[0].submit();">
 			<%= buildoptions('r') %>
@@ -107,12 +113,6 @@ if form.get('cluster', None)=='dev':
 			<%= buildoptions('z') %>
 			</select>
 		</td>
-                <td>
-                        <strong>host</strong>:
-                        <select name="h" onchange="document.forms[0].submit();">
-                        <%= buildoptions('h') %>
-                        </select>
-                </td>
 	</tr>
 </table>
 </form>
